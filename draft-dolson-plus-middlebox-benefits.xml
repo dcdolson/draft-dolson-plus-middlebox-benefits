@@ -33,7 +33,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-dolson-plus-middlebox-benefits-02" ipr="trust200902">
+<rfc category="info" docName="draft-dolson-plus-middlebox-benefits-03" ipr="trust200902">
  <!-- category values: std, bcp, info, exp, and historic
     ipr values: trust200902, noModificationTrust200902, noDerivativesTrust200902,
        or pre5378Trust200902
@@ -192,7 +192,11 @@
         (e.g., session boarder controllers <xref target="RFC5853"/>)
         they are out of scope for this document, the aim being to describe
         benefits of middleboxes using transport-layer features. 
-        This document advocates for transport connections to be
+        An earlier document <xref target="I-D.mm-wg-effect-encrypt"/>
+        describes the impact of pervasive encryption of application-layer
+        data on network monitoring, protecting and troubleshooting.
+     </t>
+     <t>This document advocates for transport connections to be
         measured and managed by the network for the benefit of both
         parties: for the end-user to receive better quality of experience,
         and for the network operator to improve resource usage, the former
@@ -640,6 +644,7 @@
 
    </references>
    <references title="Informative References">
+     <?rfc include="reference.I-D.mm-wg-effect-encrypt.xml"?>
      <?rfc include="reference.I-D.trammell-plus-statefulness.xml"?>
      <?rfc include="reference.I-D.zhang-banana-problem-statement.xml"?>
      <?rfc include="reference.I-D.nam-mptcp-deployment-considerations.xml"?>
