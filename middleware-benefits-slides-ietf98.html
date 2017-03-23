@@ -1,0 +1,123 @@
+<html>
+<head>
+<style>
+.page {
+   page-break-after: always;
+   padding-top: 5%;
+ }
+#titlePage {
+   text-align: center;
+}
+h1 {
+    font-size: 30pt;
+}
+h2 {
+    font-size: 26pt;
+}
+h3 {
+    font-size: 20pt;
+}
+ul {
+    font-size: 24pt;
+}
+li {
+    padding-bottom: 12pt;
+}
+pre {
+    font-size: 16pt;
+}
+</style>
+</head>
+<body>
+<div class="page" id="titlePage">
+<h1>Beneficial Functions of Middleboxes</h1>
+<h1>draft-dolson-plus-middlebox-benefits-03</h1>
+<h3>Authors: D. Dolson, J. Snellman, M. Boucadair, C. Jacquenet</h3>
+<h2>IETF 98</h2>
+<h3>Presenter: David Dolson</h3>
+</div>
+
+<div class="page">
+<h1>Purpose</h1>
+<ul>
+<li>Discuss benefits of network devices to provide context for discussion of trade-offs</li>
+<li>Focus on transport layer (esp. TCP) functions</li>
+<li>Application-layer middlebox functions are out of scope (but useful functions exist)</li>
+<li>Look at (1) passive measurements and (2) active traffic modification</li>
+</ul>
+</div>
+
+<div class="page">
+<h1>Stating the Obvious</h1>
+<ul>
+<li>The Internet is complicated; the end-to-end principle is an idealization</li>
+<li>The network operator is often called upon first when applications are broken</li>
+</ul>
+</div>
+
+<div class="page">
+<h1>Measurements (Management and Diagnosis)</h1>
+<h2>From the ToC:</h2>
+<pre>
+   2.  Measurements  . . . . . . . . . . . . . . . . . . . . . . . .   4
+     2.1.  Packet Loss . . . . . . . . . . . . . . . . . . . . . . .   4
+     2.2.  Round Trip Times  . . . . . . . . . . . . . . . . . . . .   5
+     2.3.  Measuring Packet Reordering . . . . . . . . . . . . . . .   5
+     2.4.  Throughput and Bottleneck Identification  . . . . . . . .   6
+     2.5.  DDoS Detection  . . . . . . . . . . . . . . . . . . . . .   6
+     2.6.  Packet Corruption . . . . . . . . . . . . . . . . . . . .   7
+     2.7.  Application-Layer Measurements  . . . . . . . . . . . . .   7
+</pre>
+</div>
+
+<div class="page">
+<h1>Active Functions</h1>
+<h2>From the ToC:</h2>
+<pre>
+   3.  Functions Beyond Measurement: A Few Examples  . . . . . . . .   7
+     3.1.  NAT . . . . . . . . . . . . . . . . . . . . . . . . . . .   7
+     3.2.  Firewall  . . . . . . . . . . . . . . . . . . . . . . . .   8
+     3.3.  DDoS Scrubbing  . . . . . . . . . . . . . . . . . . . . .   8
+     3.4.  Implicit Identification . . . . . . . . . . . . . . . . .   9
+     3.5.  Performance-Enhancing Proxies . . . . . . . . . . . . . .  10
+     3.6.  Network Coding  . . . . . . . . . . . . . . . . . . . . .  10
+     3.7.  Network-Assisted Bandwidth Aggregation  . . . . . . . . .  10
+     3.8.  Prioritization and Differentiated Services  . . . . . . .  11
+     3.9.  Measurement-Based Shaping . . . . . . . . . . . . . . . .  12
+     3.10. Fairness to End-User Quota  . . . . . . . . . . . . . . .  12
+</pre>
+</div>
+
+<div class="page">
+<h1>Recurring Tools</h1>
+<ul>
+ <li>Connection state (TCP start/established/end)</li>
+ <li>Association and Confirmation signalling</li>
+ <li>Tracking sequence numbers (loss and reordering)</li>
+ <li>Correlating acknowledgements to data</li>
+ <li>Measuring receive window</li>
+</ul>
+<h2>Virtually all of the TCP header and option fields are used.</h2>
+</div>
+
+<div class="page">
+<h1>Of Concern to IETF</h1>
+<ul>
+ <li>Buffer bloat - detected with round-trip times</li>
+ <li>DDoS detection and mitigation - assisted by association/confirmation signaling</li>
+</ul>
+</div>
+
+<div class="page">
+<h1>What More Would be Useful?</h1>
+<h2>Explicit application performance indicators in the transport layer?</h2>
+<ul>
+ <li>E.g., video resolution</li>
+ <li>E.g., VoIP/Video call quality</li>
+ <li>E.g., transaction response time</li>
+</ul>
+</div>
+
+
+</body>
+</html>
