@@ -104,6 +104,18 @@ pre {
 </div>
 
 <div class="page">
+<h1>Example: Firewall</h1>
+<h2>Policy: Permit internal-initiated connections</h2>
+<ul>
+ <li>Maintain state per TCP connection</li>
+ <li>Only permit state to be created by outbound SYN</li>
+ <li>Deny inbound packets not matching any state</li>
+ <li>Deny inbound packets with inappropriate sequence numbers</li>
+ <li>Deny non-sane packets</li>
+</ul>
+</div>
+
+<div class="page">
 <h1>Recurring Transport-Layer Tools</h1>
 <ul>
  <li>Connection state (TCP start/established/end)</li>
