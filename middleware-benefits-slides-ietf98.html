@@ -46,6 +46,7 @@ pre {
 <li>Application-layer middlebox functions are out of scope (but useful functions exist)</li>
   <ul><li>See draft-mm-wg-effect-encrypt</li></ul>
 <li>Look at (1) passive measurements and (2) active traffic modification</li>
+<li>Manual trouble-shooting (Wireshark) &amp; proactive monitoring</li>
 </ul>
 </div>
 
@@ -53,7 +54,11 @@ pre {
 <h1>Stating the Obvious</h1>
 <ul>
 <li>The Internet is complicated; the end-to-end principle is an idealization</li>
-<li>The network operator is often called upon first when applications are broken</li>
+<li>The network operator:</li>
+ <ul>
+   <li>often called upon first when applications are broken</li>
+   <li>expected to do capacity planning and upgrades</li>
+ </ul>
 </ul>
 </div>
 
@@ -105,7 +110,7 @@ pre {
 
 <div class="page">
 <h1>Example: Firewall</h1>
-<h2>Policy: Permit internal-initiated connections</h2>
+<h2>Policy: Permit only internally-initiated connections</h2>
 <ul>
  <li>Maintain state per TCP connection</li>
  <li>Only permit state to be created by outbound SYN</li>
@@ -133,45 +138,7 @@ pre {
 <ul>
  <li>Buffer bloat - detected with round-trip times</li>
  <li>DDoS detection and mitigation - assisted by association/confirmation signaling</li>
-</ul>
-</div>
-
-<div class="page">
-<h1>Security</h1>
-<h2>Does greater privacy mean less security?</h2>
-<ul>
- <li>If operator cannot determine if network is OK?</li>
- <li>If firewalls don't work as well?</li>
- <li>If DDoS scrubbing doesn't work as well?</li>
-</ul>
-</div>
-
-<div class="page">
-<h1>Standard Middlebox Behaviors?</h1>
-<ul>
- <li>TCP standard did not consider how operators should
-     measure QoE or solve problems, so vendors used imagination.</li>
- <li>Some suggest stopping this by hiding everything.</li>
- <li>An alternative is to provide standard mechanisms in
-     cooperation with the end-points.</li>
-   <ul>
-    <li>Round-trip time</li>
-    <li>Packet loss</li>
-    <li>Session state</li>
-    <li>Association &amp; confirmation</li>
-    <li>Congestion &amp; receiver bottleneck (window)</li>
-   </ul>
-</ul>
-</div>
-
-
-<div class="page">
-<h1>What More Would be Useful?</h1>
-<h2>Explicit (optional) application performance indicators in the transport layer?</h2>
-<ul>
- <li>E.g., video resolution</li>
- <li>E.g., VoIP/Video call quality</li>
- <li>E.g., transaction response time</li>
+ <li>Network-assisted bandwidth aggregataion (BANANA)</li>
 </ul>
 </div>
 
@@ -181,10 +148,14 @@ pre {
  <li>It is clear that functions and observations within
      the network improve the network for the users.</li>
  <li>It has been our goal to socialize these.</li>
- <li>To avoid bad kinds of middlebox functions, standardize
-     mechanisms for the functions to operate.</li>
  <li>To share this with the larger IETF community, can we
      progress towards publication?</li>
+ <li>Request feedback about:</li>
+  <ul>
+   <li>Is this the correct list of functions, and are they described properly?</li>
+   <li>Security: can exposing some information improve security functions?</li>
+   <li>Would it be good to provide measurement hooks in protocols?</li>
+  </ul>
 </ul>
 </div>
 
