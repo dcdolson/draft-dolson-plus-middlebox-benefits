@@ -42,7 +42,7 @@ pre {
 <h1>Purpose</h1>
 <ul>
 <li>Discuss benefits of network devices to provide context for discussion of trade-offs</li>
-<li>In the context of PLUS, focus on transport layer (esp. TCP) functions</li>
+<li>Inspired by PLUS, focus on transport layer (esp. TCP) functions</li>
 <li>Application-layer middlebox functions are out of scope (but useful functions exist)</li>
   <ul><li>See draft-mm-wg-effect-encrypt</li></ul>
 <li>Look at (1) passive measurements and (2) active traffic modification</li>
@@ -85,6 +85,7 @@ pre {
  <li>Duplicate frames? Packet loss/corruption downstream.</li>
  <li>Reordered frames? ECMP issue upstream.</li>
  <li>Corrupted frames? Bad hardware upstream.</li>
+ <li>High RTTs? Downstream buffer bloat.</li>
  <li>Full window? Bottleneck at receiver node.</li>
  <li>Otherwise healthy? Sender too slow (server, proxy, or cache).</li>
 </ul>
