@@ -144,7 +144,7 @@
         a request was made for documentation about the benefits
         that might be provided by permitting middleboxes to have some
         visibility to transport-layer information.</t>
-     <t>This document summarizes benefits provided to the Internet by
+     <t>This document summarizes benefits that operators perceive to be provided by
         intermediary devices that provide functions apart from normal IP forwarding.
         Such intermediary devices are often called "middleboxes".</t>
      <t>RFC3234 defines a taxonomy of middleboxes and issues in the 
@@ -191,13 +191,13 @@
      <t>Although many middleboxes observe and manipulate application-layer content
         (e.g., session boarder controllers <xref target="RFC5853"/>)
         they are out of scope for this document, the aim being to describe
-        benefits of middleboxes using transport-layer features. 
+        middleboxes using transport-layer features. 
         An earlier document <xref target="I-D.mm-wg-effect-encrypt"/>
         describes the impact of pervasive encryption of application-layer
         data on network monitoring, protecting and troubleshooting.
      </t>
-     <t>This document advocates for transport connections to be
-        measured and managed by the network for the benefit of both
+     <t>This document takes an operator perspective that measurement
+        and management of transport connections is of benefit to both
         parties: for the end-user to receive better quality of experience,
         and for the network operator to improve resource usage, the former
         being a consequence of the latter.</t>
@@ -280,8 +280,8 @@
           <xref target="RFC2991"/> and <xref target="RFC7690"/>),
           the end-points may react as if packet loss is occurring and
           retransmit packets or reduce forwarding rates.
-          It is therefore beneficial to be able to diagnose packet
-          reordering from within a network.</t>
+          Therefore a network operator desires the ability to diagnose
+          packet reordering.</t>
        <t>For TCP, packet reordering can be detected by observing
           TCP sequence numbers per direction. See for example
           a number of standard packet reordering metrics in <xref target="RFC4737"/>
@@ -331,8 +331,8 @@
        corruption will generally not be detected until the checksums
        are validated by the endpoint, and the packet is dropped. This
        means that detecting the exact location where packets are lost
-       is not sufficient when troubleshooting networks. It should also
-       be possible to find out where packets are being corrupted. IP and
+       is not sufficient when troubleshooting networks. An operator would like
+       to find out where packets are being corrupted. IP and
        TCP checksum verification allows a measurement device to correctly
        distinguish between upstream packet corruption and normal
        downstream packet loss.</t>
@@ -380,9 +380,6 @@
           as well as end-users who may be assigned different
           clearance levels regarding which networks and
           portions of the Internet they may acess.</t>
-       <t>Arguably many users within
-          various types of organizations would not have been
-          granted Internet access if not for safety provided by firewalls.</t>
        <t>An important aspect of a firewall policy is differentiating
           internally-initiated from externally-initiated communications.
           <list>
@@ -409,9 +406,12 @@
           the purpose of a scrubber is to discard attack traffic while
           permitting useful traffic. E.g., such a mitigator is described in
           <xref target="I-D.ietf-dots-architecture"/>.</t>
-       <t>When attacks occur against constrained resources, there is
-          obviously a huge benefit in being able to scrub well.</t>
-       <t>Furthermore, this is solely a task for an on-path network device because
+       <t>When attacks occur against constrained resources, some traffic
+          will be discarded before reaching the intended destination.
+          A user receives better experience and a server runs more efficiently
+          if a scrubber can discard attack traffic, leaving room for
+          legitimate traffic.</t>
+       <t>Scrubbing must be provided by an on-path network device because
           neither end-point of a legitimate connection has any control over
           the source of the attack traffic.</t>
        <t>Source-spoofed DDoS attacks can be mitigated at the source using
@@ -505,8 +505,10 @@
           on behalf of hosts so that they can take advantage of establishing
           communications over multiple paths
           <xref target="I-D.boucadair-mptcp-plain-mode"/>.</t>
-       <t>Note that an MPTCP proxy can be beneficial even if both the client
-          and the server are MPTCP-compliant. Examples of such cases are listed below:
+       <t>Note there are cases when end-to-end MPTCP cannot be used even
+          though both client and server are MPTCP-compliant. An MPTCP proxy
+          can provide multipath utilization in these cases.
+          Examples of such cases are listed below:
           <list style="numbers">
             <t>The use of private IPv4 addresses in some access networks.
                Typically, additional subflows can not be added to the MPTCP
@@ -526,7 +528,7 @@
           E.g., gaming traffic may be prioritized over email or software updates.
           </t>
        <t>Middleboxes may identify different classes of traffic by inspecting
-          multiple layers of header and payload.</t>
+          multiple layers of header and length of payload.</t>
      </section>
      <section title="Measurement-Based Shaping">
        <t>Basic traffic shaping functionality requires no
@@ -575,9 +577,9 @@
      <section title="Confidentiality">
        <t>This document intentionally excludes middleboxes that observe or manipulate
           application-layer data.</t>
-       <t>The benefits described in this document can all be implemented without
+       <t>The measurements and functions described in this document can all be implemented without
           violating confidentiality. However, there is always the question of
-          whether the fields and packet properties used to achieve these 
+          whether the fields and packet properties used to achieve operational 
           benefits may also be used for harm.</t>
        <t>In particular, we want to ask what confidentiality is lost by
           exposing transport-layer fields beyond what can be learned by
