@@ -230,7 +230,7 @@
         in capacity planning. Short-term anomalies revealed by these measurements
         can identify network breakages, attacks in progress, or
         misbehaving devices/applications.</t>
-     <section title="Packet Loss">
+     <section title="Packet Loss" anchor="sec_loss">
        <t>Network problems and under-provisioning can be detected if
           packet loss is measurable. TCP packet loss can be detected
           by observing gaps in sequence numbers, retransmitted sequence
@@ -250,7 +250,7 @@
        packet loss is an important measurement for any middlebox that needs to make
        traffic handling decisions based on observed levels of congestion.</t>
      </section>
-     <section title="Round Trip Times">
+     <section title="Round Trip Times" anchor="sec_rtt">
        <t>A TCP packet stream can be used to measure the round-trip time
        on each side of the measurement point. During the connection
        handshake, the SYN, SYNACK, and ACK timings can be used to establish
@@ -307,24 +307,29 @@
           excluded in such analyses.
         </t>
      </section>
-     <section title="DDoS Detection" anchor="section_ddos_detection">
+     <section title="Attack Detection" anchor="section_attack_detection">
        <t>When an application or network resource is under attack, it
           is useful to identify this situation from the network perspective,
           upstream of the attacked resource.</t>
        <t>Although detection methods tend to be proprietary,
-          DDoS attack detection is fundamentally one of:
+          attack detection from within the network may comprise:
           <list style="symbols">
-            <t>detecting protocol violations by tracking the
-               transport-layer state machine or application-layer messaging; or</t>
-            <t>anomaly detection by noticing atypical traffic patterns taken from measurements.</t>
-          </list></t>
-       <t>Two trends in protocol design will make DDoS detection more difficult:
+            <t>Identifying uncharacteristic traffic volumes or sources;</t>
+            <t>Identifying congestion, possibly using techniques in
+               <xref target="sec_loss"/> and <xref target="sec_rtt"/>;</t>
+            <t>Identifying incomplete connections or transactions,
+               from attacks which attempt to exhaust server resources;</t>
+            <t>Fingerprinting based on whatever available fields are determined
+               to be useful in discriminating an attack from desirable
+               traffic.</t>
+          </list>
+       </t>
+       <t>Two trends in protocol design will make attack detection more difficult:
           <list style="symbols">
-            <t>the desire to encrypt transport-layer communication and sequence numbers;</t>
+            <t>the desire to encrypt transport-layer fields;</t>
             <t>the desire to avoid statistical fingerprinting by adding entropy in various forms.</t>
           </list></t>
-       <t>Those desires assist in the worthy goal of improved privacy,
-          but also serve to defeat DDoS detection.</t>
+       <t>While improving privacy, those approaches may hinder attack detection.</t>
      </section>
      <section title="Packet Corruption">
        <t>One notable source of packet loss is packet corruption. This
