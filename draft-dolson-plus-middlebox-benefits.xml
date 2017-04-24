@@ -201,6 +201,9 @@
         parties: for the end-user to receive better quality of experience,
         and for the network operator to improve resource usage, the former
         being a consequence of the latter.</t>
+     <t>For the purposes of this document (and consistent with the RFC3234
+        definition), middlebox functions may be found in routers and
+        switches in addition to dedicated devices.</t>
      <t>This document does not discuss whether exposing some data to on-path
         devices for network assistance purposes can be achieved by using
         in-band or out-of-band mechanisms.</t>
