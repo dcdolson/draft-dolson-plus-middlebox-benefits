@@ -176,6 +176,9 @@
              provider(s), which may include multi-homing.</t>
           <t>On the Gi interface where a GGSN connects to a PDN
              (see section 3.1 of <xref target="RFC6459"/>).</t>
+          <t>For the purposes of this document (and consistent with the RFC3234
+             definition), middlebox functions may be found in routers and
+             switches in addition to dedicated devices.</t>
         </list>
       </t>
      <t>The QUIC working group and PLUS BoF are debating the
@@ -185,6 +188,17 @@
         <eref target="https://www.snellman.net/blog/archive/2016-12-01-quic-tou/"/>.)
         This document itemizes a variety of features provided by middleboxes
         and by ad hoc analysis performed by operators using packet analyzers.</t>
+     <t>The Internet is complicated, and network operators are tasked
+        with providing the network abstraction between end-points.
+        Network operators are often the ones first called upon when
+        applications fail to function properly, often with
+        user reports about application behaviors (not about packet behaviors).
+        Therefore it isn't surprising that operators (wanting to be helpful)
+        desire visibility into flow information to identify how well the
+        problem flows are progressing and how well other flows
+        are progressing.
+        </t>
+<!-- REVISIT: explicit scope section? -->
      <t>Many of the techniques described in this document require stateful
         analysis of transport streams.  A generic state machine is
         described in <xref target="I-D.trammell-plus-statefulness"/>.</t>
@@ -196,14 +210,17 @@
         describes the impact of pervasive encryption of application-layer
         data on network monitoring, protecting and troubleshooting.
      </t>
+     <t>This document is not intended to recommend (or prohibit)
+        middlebox deployment.
+        Many operators have found the value provided by middleboxes
+        to outweigh the added cost and complexity; this document
+        attempts to provide that perspective as a reference
+        in discussion of protocol design trade-offs.</t>
      <t>This document takes an operator perspective that measurement
         and management of transport connections is of benefit to both
         parties: for the end-user to receive better quality of experience,
         and for the network operator to improve resource usage, the former
         being a consequence of the latter.</t>
-     <t>For the purposes of this document (and consistent with the RFC3234
-        definition), middlebox functions may be found in routers and
-        switches in addition to dedicated devices.</t>
      <t>This document does not discuss whether exposing some data to on-path
         devices for network assistance purposes can be achieved by using
         in-band or out-of-band mechanisms.</t>
