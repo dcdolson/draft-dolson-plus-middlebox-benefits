@@ -234,6 +234,8 @@
         can identify network breakages, attacks in progress, or
         misbehaving devices/applications.</t>
      <section title="Packet Loss" anchor="sec_loss">
+       <t>It is very useful for an operator to be able to detect
+          and isolate packet loss in a network.</t>
        <t>Network problems and under-provisioning can be detected if
           packet loss is measurable. TCP packet loss can be detected
           by observing gaps in sequence numbers, retransmitted sequence
@@ -254,6 +256,12 @@
        traffic handling decisions based on observed levels of congestion.</t>
      </section>
      <section title="Round Trip Times" anchor="sec_rtt">
+       <t>The ability to measure partial-path round-trip times is
+          valuable in diagnosing network issues. Knowing if latency
+          is poor on one side of the observation point or the other
+          provides more information than is available at either
+          end-point, which can only observe full round-trip times.
+       </t>
        <t>A TCP packet stream can be used to measure the round-trip time
        on each side of the measurement point. During the connection
        handshake, the SYN, SYNACK, and ACK timings can be used to establish
