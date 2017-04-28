@@ -507,13 +507,21 @@
           and poor design could make performance worse.</t>
      </section>
      <section title="Network Coding">
-       <t>Network Coding is a technique for compressing traffic or adding redundancy
-          for transmission over low-bandwidth, long-latency links such as satellite links.
-          One method is to deploy network-coding gateways at each end of those links,
+       <t>Network Coding is a technique for improving transmission
+          performance over low-bandwidth, long-latency links such as satellite links.
+          Coding may involve lossless compression and/or adding redundancy to
+          headers and payload.
+          A Network Coding Taxonomy is provided by <xref target="I-D.irtf-nwcrg-network-coding-taxonomy"/>.
+          It is typically deployed with network-coding gateways at each end of those links,
           with a network-coding tunnel between them via the slow/lossy/long-latency links.</t>
+       <t>Network coding implementations may be specific to TCP,
+          taking advantage of known properties of the protocol.</t>
        <t>The network coding gateways may employ some techniques of PEPs,
           such as creating acknowledgements of queued data, removing retransmissions
           and pacing data rates to reduce queue oscillation.</t>
+       <t>Note: this is not to be confused with transcoding, which
+          performs lossy compression on transmitted media streams,
+          and not in scope for this document.</t>
      </section>
      <section title="Network-Assisted Bandwidth Aggregation">
        <t>The Hybrid Access Aggregation Point (HAAP) is a middlebox that allows
@@ -686,6 +694,7 @@
      <?rfc include="reference.I-D.nam-mptcp-deployment-considerations.xml"?>
      <?rfc include="reference.I-D.boucadair-mptcp-plain-mode.xml"?>
      <?rfc include="reference.I-D.ietf-dots-architecture"?>
+     <?rfc include="reference.I-D.irtf-nwcrg-network-coding-taxonomy"?>.
      <?rfc include="reference.RFC.2991.xml"?>
      <?rfc include="reference.RFC.3135.xml"?>
      <?rfc include="reference.RFC.3234.xml"?>
