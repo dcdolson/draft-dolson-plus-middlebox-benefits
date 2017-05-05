@@ -373,6 +373,26 @@
           excluded in such analyses.
         </t>
      </section>
+     <section title="Congestion Responsiveness">
+        <t>
+          Congestion control mechanisms continue to evolve. Tools exist that
+          can interpret protocol sequence numbers (e.g., from TCP, RTP)  to
+          infer the congestion response of a flow. Such tools can be used by
+          operators to help understand  the impact of specific transport
+          protocols on other traffic that shares their network. For example,
+          analysing packet sequence numbers can be used to help understand
+          whether an application flow backs-off its load in the face of
+          persistent congestion (as TCP does), and hence to understand whether
+          the behaviour is appropriate for sharing limited network capacity.
+        </t>
+        <t>
+          These tools can also be used to determine whether mechanisms are
+          needed in the network to prevent flows from acquiring excessive
+          network capacity under severe congestion (e.g., by deploying
+          rate-limiters or network transport circuit breakers
+          <xref target="RFC8084"/>).
+        </t>
+     </section>
      <section title="Attack Detection" anchor="section_attack_detection">
        <t>When an application or network resource is under attack, it
           is useful to identify this situation from the network perspective,
@@ -745,6 +765,7 @@
      <?rfc include="reference.RFC.6459.xml"?>
      <?rfc include="reference.RFC.7690.xml"?>
      <?rfc include="reference.RFC.7974.xml"?>
+     <?rfc include="reference.RFC.8084.xml"?>
    </references>
 
 <!--
