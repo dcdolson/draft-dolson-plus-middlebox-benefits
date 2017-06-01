@@ -140,10 +140,6 @@
         keywords will be used for the search engine. -->
 
    <abstract>
-     <t>At IETF97, at a meeting regarding the Path Layer UDP Substrate (PLUS) protocol,
-        a request was made for documentation about the benefits
-        that might be provided by permitting middleboxes to have some
-        visibility to transport-layer information.</t>
      <t>This document summarizes benefits that operators perceive to be provided by
         intermediary devices that provide functions apart from normal IP forwarding.
         Such intermediary devices are often called "middleboxes".</t>
@@ -154,8 +150,8 @@
         and act on information carried in the transport layer, and
         especially information carried in TCP packets.</t>
      <t>A primary goal of this document is to provide information
-        to working groups developing new transport protocols, in
-        particular the PLUS and QUIC working groups, to aid understanding of
+        to working groups developing new transport protocols,
+        to aid understanding of
         what might be gained or lost by design decisions
         that may affect (or be affected by) middlebox operation.</t>
    </abstract>
@@ -163,6 +159,10 @@
 
  <middle>
    <section title="Introduction">
+     <t>At IETF97, at a meeting regarding the Path Layer UDP Substrate (PLUS) protocol,
+        a request was made for documentation about the benefits
+        that might be provided by permitting middleboxes to have some
+        visibility to transport-layer information.</t>
      <t>From <xref target="RFC3234">RFC3234</xref>, "A middlebox is
         defined as any intermediary device performing functions other than
         the normal, standard functions of an IP router on the datagram path
