@@ -70,17 +70,8 @@
     </author>
 
     <author fullname="Juho Snellman" initials="J." surname="Snellman">
-      <organization>Sandvine</organization>
       <address>
-        <postal>
-          <street>Seestrasse 5</street>
-          <!-- Reorder these if your country does things differently -->
-          <code>8002</code>
-          <city>Zurich</city>
-          <country>Switzerland</country>
-        </postal>
-        <email>jsnellman@sandvine.com</email>
-        <!-- uri and facsimile elements may also be added -->
+        <email>jsnell@iki.fi</email>
       </address>
     </author>
 
